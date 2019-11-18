@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>悼念吳聲海教授</title>
+    <meta charset="utf-8" />
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="main2.css" />
+
+
+    <!-- 給google看 -->
+    <meta name="author" content="If if.lin87048@gmail.com">
+    <meta name="copyright" content="If if.lin87048@gmail.com">
+    <meta name="description" content="眾人對吳聲海教授的懷念與感謝">
+    <meta itemprop="name" content="吳聲海教授辭世｜大家對他的懷念與感謝">
+    <meta itemprop="image" content="https://iflin.github.io/wu_mem/cover.jpeg">
+    <meta itemprop="description" content="眾人對吳聲海教授的懷念與感謝">
+
+    <!--給FB看-->
+    <meta property="og:title" content="吳聲海教授辭世｜大家對他的懷念與感謝">
+    <meta property="og:url" content="https://iflin.github.io/wu_mem/index.html">
+    <meta property="og:image" content="https://iflin.github.io/wu_mem/cover.jpeg">
+    <meta property="og:description" content="眾人對吳聲海教授的懷念與感謝">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@If_Lin">
+    <meta name="twitter:title" content="吳聲海教授辭世｜大家對他的懷念與感謝">
+    <meta name="twitter:description" content="眾人對吳聲海教授的懷念與感謝">
+    <meta name="twitter:creator" content="@If_Lin">
+    <meta name="twitter:url" content="https://iflin.github.io/wu_mem/index.html">
+
+</head>
+
+
+<body>
+
+    <header>
+        <h1>眾人對吳聲海教授的懷念與感謝</h1>
+    </header>
+
+    <div id='loading'>（載入資料中...需較長時間，請稍候）</div>
+
+
+    <section class="tiles">
+
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2">
+        </script>
+
+    </section>
+
+    <script>
+        d3.json("link.json", function(data) {
+            console.log(data);
+
+            d3.select('.tiles')
+                .selectAll()
+                .data(data
+                    .sort(function(a, b) { //排序
+                        return a.type_no - b.type_no;
+                    })
+                )
+                .enter()
+                .append('article')
+                .append('div')
+                .attr('class', 'fb-post')
+                .attr('data-width', '100%')
+                .attr('href', d => d.link);
+        });
+    </script>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+    </footer>
+
+</body>
+
+</html>
