@@ -44,6 +44,31 @@
 
 </head>
 
+<script>
+    
+                function load_d3() {
+
+                d3.json("link2.json", function(data) {
+                    console.log(data);
+
+                    d3.select('.tiles')
+                        .selectAll()
+                        .data(data
+                            .sort(function(a, b) { //排序
+                                return a.type_no - b.type_no;
+                            })
+                        )
+                        .enter()
+                        .append('article')
+                        .append('div')
+                        .attr('class', 'fb-post')
+                        .attr('data-width', '100%')
+                        .attr('href', d => d.link);
+                });
+            }
+    
+    </script>
+
 <body class="is-preload" onload="load_d3()">
     <!-- Wrapper -->
     <div id="wrapper">
@@ -51,8 +76,6 @@
         <!-- Header -->
         <header id="header">
             <div class="inner">
-
-
 
             </div>
         </header>
@@ -127,30 +150,31 @@
         </div>
 
 
+<!--
         <script>
-            //                        $(function() {
-            //                            $.get('https://spreadsheets.google.com/feeds/list/1argj_955zADENxsVLeUsMQbzmb1e1EzN_3UoM62eiXw/1/public/values?alt=json', function(data) {
-            //                                console.log(data);
-            //            
-            //                                var gdata = data.feed.entry;
-            //            
-            //                                d3.json(gdata, function(data) {
-            //                                    console.log(gdata);
-            //            
-            //                                    d3.select('.tiles')
-            //                                        .selectAll()
-            //                                        .data(gdata)
-            //                                        .enter()
-            //                                        .append('article')
-            //                                        .append('div')
-            //                                        .attr('class', 'fb-post')
-            //                                        .attr('data-width', '100%')
-            //                                        .attr('href', d => d.gsx$link.$t);
-            //                                });
-            //                            });
-            //                        });
-            //
-            //
+                                    $(function() {
+                                        $.get('https://spreadsheets.google.com/feeds/list/1argj_955zADENxsVLeUsMQbzmb1e1EzN_3UoM62eiXw/1/public/values?alt=json', function(data) {
+                                            console.log(data);
+                        
+                                            var gdata = data.feed.entry;
+                        
+                                            d3.json(gdata, function(data) {
+                                                console.log(gdata);
+                        
+                                                d3.select('.tiles')
+                                                    .selectAll()
+                                                    .data(gdata)
+                                                    .enter()
+                                                    .append('article')
+                                                    .append('div')
+                                                    .attr('class', 'fb-post')
+                                                    .attr('data-width', '100%')
+                                                    .attr('href', d => d.gsx$link.$t);
+                                            });
+                                        });
+                                    });
+            
+            
 
 
 
@@ -175,6 +199,7 @@
                 });
             }
         </script>
+-->
 
 
         <!-- Footer -->
