@@ -34,7 +34,7 @@
 </head>
 
 
-<body>
+<body onload="load_d3()">
 
     <header>
         <h1>眾人對吳聲海教授的懷念與感謝</h1>
@@ -45,29 +45,68 @@
 
     <section class="tiles">
 
-        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2">
-        </script>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v5.0&appId=1772515189745425&autoLogAppEvents=1"></script>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=2719413354789382&set=a.490054627725277&type=3 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/lifesci.nchu/posts/2877640242268435" data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/hoyenshan/posts/2796589133714060 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/shenhornyen/posts/10212194540137069 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/chiawen.lu.587/posts/3090422680973899 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/TunYUChen/posts/10157326459261140 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/sowfal/posts/3030390483641286 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/taoshanta/posts/2542606102441579 " data-width="100%" data-show-text="true"></div>
+        </article>
+
+        <article>
+            <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=3117612584922861&set=a.341572742526873&type=3" data-width="100%" data-show-text="true"></div>
+        </article>
 
     </section>
 
     <script>
-        d3.json("link2.json", function(data) {
-            console.log(data);
+        function load_d3() {
 
-            d3.select('.tiles')
-                .selectAll()
-                .data(data
-                    .sort(function(a, b) { //排序
-                        return a.type_no - b.type_no;
-                    })
-                )
-                .enter()
-                .append('article')
-                .append('div')
-                .attr('class', 'fb-post')
-                .attr('data-width', '100%')
-                .attr('href', d => d.link);
-        });
+            d3.json("link2.json", function(data) {
+                console.log(data);
+
+                d3.select('.tiles')
+                    .selectAll()
+                    .data(data
+                        .sort(function(a, b) { //排序
+                            return a.type_no - b.type_no;
+                        })
+                    )
+                    .enter()
+                    .append('article')
+                    .append('div')
+                    .attr('class', 'fb-post')
+                    .attr('data-width', '100%')
+                    .attr('href', d => d.link);
+            });
+        }
     </script>
 
 
