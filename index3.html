@@ -46,6 +46,10 @@
 
 <script>
     
+//          setTimeout(load_d3(),1000);
+    
+    window.onload=load_d3;
+
                 function load_d3() {
 
                 d3.json("link2.json", function(data) {
@@ -69,7 +73,7 @@
     
     </script>
 
-<body class="is-preload" onload="load_d3()">
+<body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
 
