@@ -72,7 +72,7 @@ input, select, textarea {
 	appearance: none;
 }
 
-.fb-post, .fb-comment-embed {
+.fb-post {
 
         -webkit-box-shadow: 2px 2px 5px #585858;
 	-moz-box-shadow: 2px 2px 5px #585858;
