@@ -17,7 +17,6 @@
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <script src="https://d3js.org/d3.v4.min.js"></script>
-    <!--    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
 
     <!-- 給google看 -->
     <meta name="author" content="If if.lin87048@gmail.com">
@@ -45,30 +44,6 @@
 </head>
 
 
-<!--
-<script>
-    function load_d3() {
-
-        d3.json("link2.json", function(data) {
-            console.log(data);
-
-            d3.select('.tiles2')
-                .selectAll()
-                .data(data
-                    .sort(function(a, b) { //排序
-                        return a.type_no - b.type_no;
-                    })
-                )
-                .enter()
-                .append('article')
-                .append('div')
-                .attr('class', 'fb-post')
-                .attr('data-width', '100%')
-                .attr('href', d => d.link);
-        });
-    };
-</script>
--->
 
 <body class="is-preload">
     <!-- Wrapper -->
@@ -91,7 +66,7 @@
                     <!--                    <p style="font-size: 1.2em; margin-top: -2.5em;margin-bottom: 1em;">吳聲海教授於2019年11月14日辭世</p>-->
                 </header>
 
-                <div id='loading'>（載入資料中...需較長時間，請稍候）</div>
+                <div>（載入資料中...需較長時間，請稍候）</div>
 
                 <section class="tiles">
 
@@ -161,7 +136,6 @@
 -->
 
                 <script>
-                    //                    setTimeout(function() {
 
                     d3.json("link2.json", function(data) {
                         console.log(data);
@@ -182,7 +156,7 @@
                             .attr('href', d => d.link)
                     });
 
-                    //                    }, 5000)
+      
                 </script>
 
                 <!--
