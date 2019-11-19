@@ -53,7 +53,7 @@
                 d3.json("link2.json", function(data) {
                     console.log(data);
 
-                    d3.select('.tiles')
+                    d3.select('.tiles2')
                         .selectAll()
                         .data(data
                             .sort(function(a, b) { //排序
@@ -71,7 +71,7 @@
     
     </script>
 
-<body class="is-preload">
+<body onload="load_d3()" class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
 
@@ -132,11 +132,15 @@
                         <div class="fb-post" data-href="https://www.facebook.com/taoshanta/posts/2542606102441579 " data-width="100%" data-show-text="true"></div>
                     </article>
 
-                    <article  onload="load_d3()">
+                    <article>
                         <div class="fb-post" data-href="https://www.facebook.com/photo.php?fbid=3117612584922861&set=a.341572742526873&type=3" data-width="100%" data-show-text="true"></div>
                     </article>
 
 
+                </section>
+                
+                <section class="tiles tiles2">
+                    
                 </section>
 
                 <!--
