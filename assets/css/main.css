@@ -1141,12 +1141,9 @@ input, select, textarea {
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
 			background-image: linear-gradient(to top, rgba(19, 21, 25, 0.5), rgba(19, 21, 25, 0.5)), url("../../images/overlay.png");
-			background-size: auto,
- 256px 256px;
-			background-position: center,
- center;
-			background-repeat: no-repeat,
- repeat;
+			background-size: auto, 256px 256px;
+			background-position: center, center;
+			background-repeat: no-repeat, repeat;
 			z-index: 2;
 		}
 
@@ -1332,8 +1329,8 @@ input, select, textarea {
 			#header .content p {
 				text-transform: uppercase;
 				letter-spacing: 0.2rem;
-				font-size: 1.2rem;
-				line-height: 1.7;
+				font-size: 0.8rem;
+				line-height: 2;
 			}
 
 		#header nav ul {
@@ -1619,7 +1616,7 @@ input, select, textarea {
 		@media screen and (max-width: 480px) {
 
 			#main article {
-				padding: 3rem 0rem 0.5rem 0rem ;
+				padding: 3rem 1.5rem 0.5rem 1.5rem ;
 			}
 
 		}
